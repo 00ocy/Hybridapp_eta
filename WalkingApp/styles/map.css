@@ -1,0 +1,146 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 42.8rem;
+}.item--bEH {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/image-1-bg-Vqb.png');
+  background-color: #ffffff;
+  border-radius: 4rem;
+}
+.item--bEH .auto-group-lnf5-Awb {
+  box-sizing: border-box;
+  padding: 9.3rem 4.2rem 3.1rem 4rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.item--bEH .auto-group-lnf5-Awb .auto-group-kvcs-DYV {
+  margin: 0rem 0rem 60.4rem 0.1rem;
+  box-sizing: border-box;
+  padding: 1.4rem 2.8rem 1.3rem 2.7rem;
+  width: 34.5rem;
+  height: 5.2rem;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  border-radius: 2rem;
+  flex-shrink: 0;
+}
+.item--bEH .auto-group-lnf5-Awb .auto-group-kvcs-DYV .frame-1-ted {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.item--bEH .auto-group-lnf5-Awb .auto-group-kvcs-DYV .frame-1-ted .item--31j {
+  margin: 0.1rem 21.2rem 0rem 0rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2125;
+  color: #858585;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.item--bEH .auto-group-lnf5-Awb .auto-group-kvcs-DYV .frame-1-ted .group-1-rzm {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.item--bEH .auto-group-lnf5-Awb .group-11-8Bb {
+  margin-right: 0.1rem;
+  width: 34.5rem;
+  height: 5.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2125;
+  color: #000000;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.3400000036);
+  border-radius: 2rem;
+  flex-shrink: 0;
+}
+.item--bEH .navbar-YFK {
+  width: 100%;
+  height: 9.2rem;
+  position: relative;
+  box-shadow: 0 1rem 4rem rgba(29, 22, 23, 0.0700000003);
+  flex-shrink: 0;
+}
+.item--bEH .navbar-YFK .item--g6d {
+  width: 42.8rem;
+  height: 8rem;
+  position: absolute;
+  left: 0;
+  top: 1.2rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+.item--bEH .navbar-YFK .item--9W1 {
+  box-sizing: border-box;
+  padding: 1.4rem 1.6rem 1.8rem 1.7rem;
+  width: 6.8rem;
+  height: 6.5rem;
+  cursor: pointer;
+  position: absolute;
+  left: 18rem;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/-SJV.png');
+}
+.item--bEH .navbar-YFK .item--9W1 .home-E1f {
+  width: 3.5rem;
+  height: 3.3rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+.item--bEH .navbar-YFK .item--9PX {
+  width: 4.2rem;
+  height: 4.2rem;
+  cursor: pointer;
+  position: absolute;
+  left: 7.3rem;
+  top: 2.6rem;
+  object-fit: cover;
+  vertical-align: top;
+}
+.item--bEH .navbar-YFK .item--Tf7 {
+  width: 4.3rem;
+  height: 4.3rem;
+  position: absolute;
+  left: 31.7rem;
+  top: 2.3rem;
+  object-fit: cover;
+  vertical-align: top;
+}
