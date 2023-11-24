@@ -14,19 +14,6 @@ input {
 }
 body {
   width: 42.8rem;
-}.item--bEH {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('../assets/image-1-bg-Vqb.png');
-  background-color: #ffffff;
-  border-radius: 4rem;
 }
 .item--bEH .auto-group-lnf5-Awb {
   box-sizing: border-box;
@@ -142,5 +129,35 @@ body {
   left: 31.7rem;
   top: 2.3rem;
   object-fit: cover;
-  vertical-align: top;
+  vertical-align: top;  
 }
+
+.item--bEH {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  border-radius: 4rem;
+  position: relative;
+  z-index: 0; /* 지도가 다른 요소들보다 아래에 위치하도록 z-index 값을 낮춥니다. */
+}
+.navbar-YFK, .group-11-8Bb, .auto-group-kvcs-DYV{
+  position: relative; /* 상대적 위치 지정 */
+  z-index: 3; /* 지도보다 높은 z-index 값을 지정합니다. */
+}
+
+#map {
+  position: absolute;
+  top: 0; /* 원하는 위치에 맞게 조정 */
+  left: 0; /* 원하는 위치에 맞게 조정 */
+  height: 100%; /* 원하는 높이 */
+  width: 100%; /* 원하는 너비 */  
+  z-index: 1; /* 지도를 다른 요소들 뒤로 보냅니다. */
+}
+

@@ -286,27 +286,26 @@ body {
   flex-shrink: 0;
 }
 .item--hZ3 .login-social-media-5WH {
-  margin: 0rem 9.3rem 1rem 9.5rem;
-  width: calc(100% - 18.8rem);
+  margin: 0rem auto 1rem auto; /* 가운데 정렬을 위한 마진 조정 */
+  width: auto; /* 너비를 자동으로 조정 */
   height: 5rem;
   display: flex;
+  justify-content: center; /* 가운데 정렬을 위한 속성 추가 */
   align-items: center;
-  flex-shrink: 0;
 }
+
 .item--hZ3 .login-social-media-5WH .group-9684-193 {
-  margin-right: 3rem;
   box-sizing: border-box;
   padding: 1.5rem;
   height: 100%;
   border: solid 0.08rem #ddd9da;
   border-radius: 1.4rem;
-  flex-shrink: 0;
 }
+
 .item--hZ3 .login-social-media-5WH .group-9684-193 .google-logo-png-suite-everything-you-need-know-about-google-newest-0-2-Mih {
   width: 2rem;
   height: 2rem;
   object-fit: cover;
-  vertical-align: top;
 }
 .item--hZ3 .login-social-media-5WH .group-9683-F3P {
   width: 5rem;
