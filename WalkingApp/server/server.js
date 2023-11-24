@@ -71,12 +71,13 @@ app.post('/login', (req, res) => {
 });
 
 // 서버 시작 및 포트 설정
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
 
+<<<<<<< HEAD
 
 
 
@@ -275,3 +276,5 @@ app.get('/steps/:userId', (req, res) => {
       res.status(404).send({ message: 'User not found' });
   }
 });
+=======
+>>>>>>> 20db6af29bdc6ed1504ebad19116e8e0f3bc5781

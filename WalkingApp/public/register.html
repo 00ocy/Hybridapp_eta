@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#000000" />  
   <title>회원가입 페이지</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A400%2C700" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
@@ -13,7 +13,11 @@
   <link rel="stylesheet" href="./styles/register.css" />
 </head>
 
-<body>
+<body>      
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="510376110238-t3luckgljkbol5r017bsmgff84r4i5rk.apps.googleusercontent.com">
+    <div class="g-signin2" data-onsuccess="handleCredentialResponse"></div>
+
   <div class="item--hZ3">
     <div class="title-section-yWZ">
       <p class="item--u9K">환영합니다</p>
@@ -22,25 +26,25 @@
     <div class="label-section-iMf">
       <div class="label-bg-S2m">
         <div class="placeholder-mqj">
-          <img class="iconly-light-outline-profile-KsF" src="./assets/iconly-light-outline-profile.png" />                      
+          <img class="iconly-light-outline-profile-KsF" src="./assets/iconly-light-outline-profile.png" />
           <input type="text" class="last-name-32Z" placeholder="성을 입력하세요">
         </div>
       </div>
       <div class="label-bg-LXT">
         <div class="placeholder-gLR">
-          <img class="iconly-light-outline-profile-e2M" src="./assets/iconly-light-outline-profile-Pi1.png" />          
+          <img class="iconly-light-outline-profile-e2M" src="./assets/iconly-light-outline-profile-Pi1.png" />
           <input type="text" class="first-name-Zf7" placeholder="이름">
         </div>
       </div>
       <div class="label-bg-reD">
         <div class="placeholder-bbo">
-          <img class="iconly-light-message-Z2q" src="./assets/iconly-light-message-xVF.png" />        
+          <img class="iconly-light-message-Z2q" src="./assets/iconly-light-message-xVF.png" />
           <input type="email" class="email-U9o" placeholder="이메일">
         </div>
       </div>
       <div class="label-bg-B4D">
         <div class="placeholder-h2Z">
-          <img class="iconly-light-lock-eTb" src="./assets/iconly-light-lock-N5w.png" />          
+          <img class="iconly-light-lock-eTb" src="./assets/iconly-light-lock-N5w.png" />
           <input type="password" class="password-mYD" placeholder="비밀번호">
         </div>
         <img class="hide-password-5J1" src="./assets/hide-password-sVj.png" />
@@ -62,9 +66,8 @@
         <img id="googleLogin" class="google-logo-png-suite-everything-you-need-know-about-google-newest-0-2-Mih"
           src="./assets/google-logo-png-suite-everything-you-need-know-about-google-newest-0-2-KbF.png" />
       </div>
-      <img class="group-9683-F3P" src="./assets/group-9683-oaq.png" />
     </div>
-    <div id ="login-nJD" class="login-nJD">이미 계정이 있나요? 로그인</div>
-  </div>
-  <script src="scripts/register_sciprt.js"></script>
+    <div id="login-nJD" class="login-nJD">이미 계정이 있나요? 로그인</div>
+  </div>  
+  <script src="scripts/register_sciprt.js"></script>  
 </body>
