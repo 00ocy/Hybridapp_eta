@@ -51,11 +51,22 @@
   </div>
   <div class="navbar-Eh7">
     <img class="item--PK7" src="./assets/-Hk5.png"/>
-    <div class="item--u2Z">
-      <img class="home-BVs" src="./assets/home-Jdw.png"/>
+    <div id="homeBtn" class="item--u2Z">
+      <img  class="home-BVs" src="./assets/home-Jdw.png"/>
     </div>
-    <img class="item--7uK" src="./assets/-4RX.png"/>
-    <img class="item--RQD" src="./assets/-sE1.png"/>
+    <img id="rankingBtn" class="item--7uK" src="./assets/-4RX.png"/>
+    <img id="mapBtn" class="item--RQD" src="./assets/-sE1.png"/>
   </div>
 </div>
+<script>
+    document.getElementById('homeBtn').addEventListener('click', function() {
+    window.location.href = 'home.html';
+  });
+  document.getElementById('rankingBtn').addEventListener('click', function() {
+    window.location.href = 'ranking.html';
+  });
+  document.getElementById('mapBtn').addEventListener('click', function() {
+    window.location.href = 'map.html';
+  });
+</script>
 </body>
