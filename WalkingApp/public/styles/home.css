@@ -1,20 +1,26 @@
-
 html {
-	font-size:62.5%;
+  font-size: 62.5%;
 }
+
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
-ul, li {
-	list-style: none;
+
+ul,
+li {
+  list-style: none;
 }
+
 input {
-	border: none;
+  border: none;
 }
+
 body {
   width: 42.8rem;
-}.item--mbw {
+}
+
+.item--mbw {
   box-sizing: border-box;
   padding: 6.4rem 0rem 0rem 0.2rem;
   width: 100%;
@@ -26,6 +32,7 @@ body {
   background-color: #ffffff;
   border-radius: 4rem;
 }
+
 .item--mbw .auto-group-zevw-56q {
   margin: 0rem 2.9rem 6.7rem 2.2rem;
   width: calc(100% - 5.1rem);
@@ -34,6 +41,7 @@ body {
   align-items: flex-start;
   flex-shrink: 0;
 }
+
 .item--mbw .auto-group-zevw-56q .item--b5B {
   margin: 0.2rem 28.9rem 0rem 0rem;
   font-size: 2rem;
@@ -46,8 +54,7 @@ body {
   align-items: baseline;
   flex-shrink: 0;
 }
-.item--mbw .auto-group-zevw-56q .item--b5B .item--b5B-sub-0 {
-}
+
 .item--mbw .auto-group-zevw-56q .item--b5B .item--b5B-sub-1 {
   font-size: 2rem;
   font-weight: 700;
@@ -55,6 +62,7 @@ body {
   color: #f4b183;
   font-family: Poppins, 'Source Sans Pro';
 }
+
 .item--mbw .auto-group-zevw-56q .group-10301-vFs {
   width: 4.9rem;
   height: 2.2rem;
@@ -63,6 +71,7 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
+
 .item--mbw .bg-3rH {
   margin: 0rem 2.1rem 3.4rem 1.9rem;
   box-sizing: border-box;
@@ -74,11 +83,13 @@ body {
   border-radius: 1.6rem;
   flex-shrink: 0;
 }
+
 .item--mbw .bg-3rH .group-10300-9uK {
   width: 100%;
   height: 100%;
   position: relative;
 }
+
 .item--mbw .bg-3rH .group-10300-9uK .group-10296-WE5 {
   width: 27rem;
   height: 25.5rem;
@@ -88,20 +99,23 @@ body {
   object-fit: contain;
   vertical-align: top;
 }
+
+
 .item--mbw .bg-3rH .group-10300-9uK .item--3jo {
   width: 6.1rem;
   height: 1.8rem;
   position: absolute;
-  left: 10.45rem;
+  left: 8.45rem;
   top: 9.2rem;
   text-align: center;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 0.9;
   color: #000000;
   font-family: Poppins, 'Source Sans Pro';
   white-space: nowrap;
 }
+
 .item--mbw .bg-3rH .group-10300-9uK .item-10000-w4V {
   width: 6.5rem;
   height: 1.8rem;
@@ -110,17 +124,18 @@ body {
   top: 18.4rem;
   text-align: center;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.2;
   color: #000000;
   font-family: Poppins, 'Source Sans Pro';
   white-space: nowrap;
 }
+
 .item--mbw .bg-3rH .group-10300-9uK .item-8789-EJV {
   width: 12.3rem;
   height: 3.7rem;
   position: absolute;
-  left: 7.3rem;
+  left: 6.3rem;
   top: 13rem;
   text-align: center;
   font-size: 5rem;
@@ -130,6 +145,7 @@ body {
   font-family: Poppins, 'Source Sans Pro';
   white-space: nowrap;
 }
+
 .item--mbw .bg-3rH .group-10300-9uK .group-10298-LMX {
   width: 11.8rem;
   height: 5rem;
@@ -151,6 +167,7 @@ body {
   background-color: #2870dd;
   border-radius: 2.5rem;
 }
+
 .item--mbw .bg-h5b {
   margin: 0rem 2.1rem 12.2rem 1.9rem;
   box-sizing: border-box;
@@ -162,6 +179,7 @@ body {
   border-radius: 1.6rem;
   flex-shrink: 0;
 }
+
 .item--mbw .bg-h5b .group-10299-zqP {
   width: 27.3rem;
   height: 100%;
@@ -169,6 +187,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .item--mbw .bg-h5b .group-10299-zqP .auto-group-yj3d-LPT {
   margin-bottom: 2rem;
   width: 100%;
@@ -177,8 +196,9 @@ body {
   align-items: center;
   flex-shrink: 0;
 }
+
 .item--mbw .bg-h5b .group-10299-zqP .auto-group-yj3d-LPT .group-10297-5M3 {
-  margin-right: 5.1rem;
+  margin-right: 2.1rem;
   width: 6.8rem;
   height: 100%;
   display: flex;
@@ -194,6 +214,7 @@ body {
   border-radius: 0.7rem;
   flex-shrink: 0;
 }
+
 .item--mbw .bg-h5b .group-10299-zqP .auto-group-yj3d-LPT .item-4--xQq {
   display: flex;
   align-items: center;
@@ -207,6 +228,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
+
 .item--mbw .bg-h5b .group-10299-zqP .auto-group-ddbh-RpD {
   margin: 0rem 2.9rem 0rem 1.2rem;
   width: calc(100% - 4.1rem);
@@ -214,6 +236,7 @@ body {
   align-items: center;
   flex-shrink: 0;
 }
+
 .item--mbw .bg-h5b .group-10299-zqP .auto-group-ddbh-RpD .megaphone-fill-1-MC5 {
   margin-right: 2.4903rem;
   width: 5.0097rem;
@@ -222,10 +245,10 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
+
 .item--mbw .bg-h5b .group-10299-zqP .auto-group-ddbh-RpD .item--HLd {
   margin-bottom: 0.073rem;
-  max-width: 15.7rem;
-  display: flex;
+  max-width: 38.7rem;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.125;
@@ -234,38 +257,26 @@ body {
   font-family: Poppins, 'Source Sans Pro';
   flex-shrink: 0;
 }
-.item--mbw .bg-h5b .group-10299-zqP .auto-group-ddbh-RpD .item--HLd .item--HLd-sub-0 {
+
+.item--HLd {
+  display: inline; /* 또는 'block'이나 'flex' 등 원하는 레이아웃에 따라 변경 가능 */
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.125;
   letter-spacing: 0.16rem;
-  color: #ffb804;
   font-family: Poppins, 'Source Sans Pro';
 }
-.item--mbw .bg-h5b .group-10299-zqP .auto-group-ddbh-RpD .item--HLd .item--HLd-sub-1 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.125;
-  letter-spacing: 0.16rem;
-  color: #000000;
-  font-family: Poppins, 'Source Sans Pro';
+
+.item--HLd .item--HLd-sub-0,
+.item--HLd .item--HLd-sub-2 {
+  color: #ffb804; /* 노란색 코드, 필요에 따라 정확한 색상 코드로 변경해주세요 */
 }
-.item--mbw .bg-h5b .group-10299-zqP .auto-group-ddbh-RpD .item--HLd .item--HLd-sub-2 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.125;
-  letter-spacing: 0.16rem;
-  color: #ffb804;
-  font-family: Poppins, 'Source Sans Pro';
+
+.item--HLd .item--HLd-sub-1,
+.item--HLd .item--HLd-sub-3 {
+  color: #000000; /* 검은색 코드 */
 }
-.item--mbw .bg-h5b .group-10299-zqP .auto-group-ddbh-RpD .item--HLd .item--HLd-sub-3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.125;
-  letter-spacing: 0.16rem;
-  color: #000000;
-  font-family: Poppins, 'Source Sans Pro';
-}
+
 .item--mbw .navbar-Eh7 {
   width: 42.8rem;
   height: 9.2rem;
@@ -273,6 +284,7 @@ body {
   box-shadow: 0 1rem 4rem rgba(29, 22, 23, 0.0700000003);
   flex-shrink: 0;
 }
+
 .item--mbw .navbar-Eh7 .item--PK7 {
   width: 42.8rem;
   height: 8rem;
@@ -282,6 +294,7 @@ body {
   object-fit: contain;
   vertical-align: top;
 }
+
 .item--mbw .navbar-Eh7 .item--u2Z {
   box-sizing: border-box;
   padding: 1.4rem 1.6rem 1.8rem 1.7rem;
@@ -295,12 +308,14 @@ body {
   background-position: center;
   background-image: url('../assets/-Aj3.png');
 }
+
 .item--mbw .navbar-Eh7 .item--u2Z .home-BVs {
   width: 3.5rem;
   height: 3.3rem;
   object-fit: contain;
   vertical-align: top;
 }
+
 .item--mbw .navbar-Eh7 .item--7uK {
   width: 4.2rem;
   height: 4.2rem;
@@ -311,6 +326,7 @@ body {
   object-fit: cover;
   vertical-align: top;
 }
+
 .item--mbw .navbar-Eh7 .item--RQD {
   width: 4.3rem;
   height: 4.3rem;
@@ -320,4 +336,59 @@ body {
   top: 2.3rem;
   object-fit: cover;
   vertical-align: top;
+}
+
+.group-10300-9uK {
+  /* Ensure this container is relative for absolute positioning within it */
+  position: relative;
+}
+
+.gauge {
+  position: absolute;
+  top: 20px; /* '오늘의 걸음' 위에 위치하도록 조정하세요 */
+  width: 200px; /* 게이지의 너비를 늘립니다 */
+  height: 100px; /* 게이지의 높이를 늘립니다 */
+  left: 3.45rem;
+  overflow: hidden;
+  border-radius: 200px 200px 0 0; /* 반원의 모서리 반경을 너비의 절반으로 설정합니다 */
+  background: grey; /* 게이지의 기본 배경색은 회색입니다 */
+}
+
+.gauge__fill {
+  position: absolute;
+  bottom: 0; /* 바닥에 위치 */
+  background: blue; /* 게이지 채워진 부분의 색상 */
+  width: 200px; /* 게이지의 너비 */
+  height: 100px; /* 게이지의 높이 */
+  border-radius: 140px 140px 0 0; /* 상단 좌우 모서리에 대한 반원 모양을 만듭니다 */
+  transform: rotate(-180deg); /* 시작 각도를 -180도로 설정하여 왼쪽부터 시작 */
+  transform-origin: center bottom; /* 회전의 기준점을 바닥 중앙으로 설정 */
+}
+.gauge__mask {
+  position: absolute;
+  bottom: 0;
+  background: white; /* 게이지의 하단 반을 가리는 마스크는 흰색입니다 */
+  width: 140px; /* 게이지 중앙의 흰 부분의 너비를 줄여서 두께를 늘립니다 */
+  height: 70px; /* 게이지 중앙의 흰 부분의 높이를 줄여서 두께를 늘립니다 */
+  border-radius: 140px 140px 0 0; /* 반원의 모서리 반경을 조정 */
+  left: 30px; /* 중앙 정렬을 위해 왼쪽 여백을 조정합니다 */
+}
+@keyframes fillGauge {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.gauge__fill {
+  animation: fillGauge 2s ease-in-out forwards; /* 애니메이션이 끝난 상태를 유지 */
+}
+
+a{
+  color: #000000;
+}
+a:hover{
+  color: #000000;
 }
