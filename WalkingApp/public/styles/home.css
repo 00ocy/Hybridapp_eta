@@ -46,7 +46,7 @@ body {
 }
 
 .item--mbw .auto-group-zevw-56q .item--b5B {
-  margin: 0.2rem 28.9rem 0rem 0rem;
+  margin: 0.2rem 27rem 0rem 0rem;
   font-size: 2rem;
   font-weight: 700;
   line-height: 0.9;
@@ -328,6 +328,7 @@ body {
   top: 2.6rem;
   object-fit: cover;
   vertical-align: top;
+  opacity: 0.3; 
 }
 
 .item--mbw .navbar-Eh7 .item--RQD {
@@ -339,6 +340,7 @@ body {
   top: 2.3rem;
   object-fit: cover;
   vertical-align: top;
+  opacity: 0.3;
 }
 
 .group-10300-9uK {
