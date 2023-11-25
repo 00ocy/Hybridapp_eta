@@ -138,7 +138,7 @@ body {
   width: 12.3rem;
   height: 3.7rem;
   position: absolute;
-  left: 6.3rem;
+  left: 5.7rem;
   top: 13rem;
   text-align: center;
   font-size: 5rem;
@@ -396,4 +396,17 @@ a{
 }
 a:hover{
   color: #000000;
+}
+.message-completion {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #28a745; /* 메시지 색상 */
+  font-size: 1.6rem; /* 메시지 크기 */
+  font-weight: bold;
+  display: none; /* 초기 상태는 보이지 않음 */
+  z-index: 10; /* 다른 요소 위에 표시 */
 }

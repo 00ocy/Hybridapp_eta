@@ -36,6 +36,22 @@ function updateGauge(steps, maxSteps) {
   const fillDegree = (fillPercentage * 180) - 90;
   gaugeFill.style.transform = `rotate(${fillDegree}deg)`;
 }
+document.addEventListener("DOMContentLoaded", function() {
+  var gaugeFill = document.querySelector('.gauge__fill');
+
+  // 'animationend' 이벤트 리스너를 추가하여 애니메이션이 끝나는 것을 감지합니다.
+  gaugeFill.addEventListener('animationend', function() {
+    showMessageCompletion();
+  });
+});
+
+function showMessageCompletion() {
+  var message = document.querySelector('.message-completion');
+  message.style.display = 'block'; // 메시지를 보이게 합니다.
+  setTimeout(function() {
+    message.style.opacity = 1; // 메시지를 천천히 페이드인 시킵니다.
+  }, 300);
+}
 
 // 예시: 10000걸음 중 5000걸음 걸었을 때 게이지 업데이트
 updateGauge(10000, 10000);
