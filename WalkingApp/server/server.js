@@ -5,6 +5,7 @@ const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const bodyParser = require('body-parser'); //걸음수 확인
+
 /* -------------------------------------------------------------------------------------------- */
 
 // 정적 파일을 위한 경로 설정
@@ -20,6 +21,7 @@ const db = new sqlite3.Database('userDatabase.db', (err) => {
   }
   console.log('Connected to the SQLite database.');
 });
+
 /* -------------------------------------------------------------------------------------------- */
 // 구글 로그인 관련
 const { OAuth2Client } = require('google-auth-library');
@@ -29,13 +31,8 @@ const { google } = require('googleapis');
 const CLIENT_ID = '510376110238-t3luckgljkbol5r017bsmgff84r4i5rk.apps.googleusercontent.com';
 const client = new OAuth2Client(CLIENT_ID);
 
-// Google Identity Services(GIS) 라이브러리 초기화
-const googleAuth = new google.auth.GoogleAuth({
-  clientId: CLIENT_ID,
-  scopes: ['openid', 'email', 'profile'], // 필요한 스코프 설정
-});
-
 /* -------------------------------------------------------------------------------------------- */
+
 // 회원가입 처리
 app.post('/signup', (req, res) => {
   const { lastName, firstName, email, password } = req.body;
@@ -61,6 +58,29 @@ app.post('/signup', (req, res) => {
     }
   });
 });
+
+/* -------------------------------------------------------------------------------------------- */
+
+// 일반 로그인 처리
+app.post('/login', (req, res) => {
+  // 요청에서 이메일과 비밀번호 추출
+  const { email, password } = req.body;
+  
+  // 데이터베이스에서 사용자 검색
+  db.get("SELECT * FROM users WHERE email = ?", [email], (err, row) => {
+    if (err) {
+      // 데이터베이스 오류 처리
+      res.json({ status: 'error', message: '로그인 중 오류가 발생했습니다.' });
+    } else if (row && row.password === password) {
+      // 로그인 성공 응답
+      res.json({ status: 'success', message: '로그인 성공!' });
+    } else {
+      // 로그인 실패 응답
+      res.json({ status: 'error', message: '이메일 또는 비밀번호가 올바르지 않습니다.' });
+    }
+  });
+});
+
 /* -------------------------------------------------------------------------------------------- */
 
 // 구글 로그인 처리

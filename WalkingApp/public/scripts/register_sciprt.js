@@ -48,35 +48,37 @@ document
       });
   });
 
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
 // "로그인" 버튼에 클릭 이벤트 리스너 추가
 document.getElementById("login-nJD").addEventListener("click", function () {
   // 로그인 페이지로 이동
   window.location.href = "login.html";
 });
 
-
+/* ------------------------------------------------------------------------------------------------------------ */
 
 // 구글 로그인
-document.getElementById("googleLogin").addEventListener("click", function () {
-  // Google 로그인 초기화
-  gapi.load('auth2', function() {
-    // Google Auth 인스턴스 생성
-    var auth2 = gapi.auth2.init({
-      client_id: '510376110238-t3luckgljkbol5r017bsmgff84r4i5rk.apps.googleusercontent.com',
-      cookiepolicy: 'single_host_origin',
-    });
+// Google 로그인 버튼 초기화 및 이벤트 핸들러 설정
+function handleCredentialResponse(response) {
+  // 서버로 ID 토큰 전송
+  sendTokenToServer(response.credential);
+}
 
-    // Google 로그인 버튼에 이벤트 리스너 추가
-    auth2.attachClickHandler('googleLogin', {},
-      function(googleUser) {
-        // 로그인 성공 시 토큰을 서버로 전송
-        var id_token = googleUser.getAuthResponse().id_token;
-        sendTokenToServer(id_token);
-      }, function(error) {
-        alert(JSON.stringify(error, undefined, 2));
-      });
+window.onload = function () {
+  google.accounts.id.initialize({
+    client_id: '510376110238-t3luckgljkbol5r017bsmgff84r4i5rk.apps.googleusercontent.com',
+    callback: handleCredentialResponse
   });
-});
+
+  google.accounts.id.renderButton(
+    document.getElementById('googleLogin'),
+    { theme: 'outline', size: 'large' }  // 버튼 스타일 설정
+  );
+
+  google.accounts.id.prompt(); // 사용자가 로그인하도록 유도
+}
 
 // 서버로 토큰 전송
 function sendTokenToServer(token) {
@@ -91,7 +93,7 @@ function sendTokenToServer(token) {
   .then(data => {
     if (data.status === 'success') {
       // 로그인 성공 처리
-      window.location.href = '/home'; // 예시: 홈페이지로 리디렉션
+      window.location.href = '/home.html'; // 예시: 홈페이지로 리디렉션
     } else {
       // 로그인 실패 처리
       alert('로그인 실패: ' + data.message);
