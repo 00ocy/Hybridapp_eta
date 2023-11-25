@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <title>지도_기본</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C700"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
-  <link rel="stylesheet" href="./styles/map.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C700" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
+  <link rel="stylesheet" href="./styles/map.css" />
 </head>
-<body>
-<div class="item--bEH">
-  <div id="map"></div>
-  <div class="auto-group-lnf5-Awb">
-    <div class="auto-group-kvcs-DYV">
-      <div class="frame-1-ted">
-        <input type="text" id="placeSearchInput" class="placeSearch" style="height: 30px; width:300px; font-size: large;" placeholder="지역 검색">
-<img id="SearchStart" class="group-1-rzm" src="./assets/group-1.png"/>
 
+<body>
+  <div class="item--bEH">
+    <div id="map"></div>
+    <div class="auto-group-lnf5-Awb">
+      <div class="auto-group-kvcs-DYV">
+        <div class="frame-1-ted">
+          <input type="text" id="placeSearchInput" class="placeSearch"
+            style="height: 30px; width:300px; font-size: large;" placeholder="지역 검색">
+          <img id="SearchStart" class="group-1-rzm" src="./assets/group-1.png" />
+
+        </div>
       </div>
+      <div class="group-11-8Bb">주변 걷자랑 사용자들 검색</div>
     </div>
-    <div class="group-11-8Bb">주변 걷자랑 사용자들 검색</div>
-  </div>
-  <div class="navbar-YFK">
-    <img class="item--g6d" src="./assets/-siR.png"/>
-    <div id="homeBtn" class="item--9W1">
-      <img class="home-E1f" src="./assets/home-Zcd.png"/>
+    <div class="navbar-YFK">
+      <img class="item--g6d" src="./assets/-siR.png" />
+      <div id="homeBtn" class="item--9W1">
+        <img class="home-E1f" src="./assets/home-Zcd.png" />
+      </div>
+      <img id="rankingBtn" class="item--9PX" src="./assets/-iYZ.png" />
+      <img id="mapBtn" class="item--Tf7" src="./assets/-Hmb.png" />
     </div>
-    <img id="rankingBtn" class="item--9PX" src="./assets/-iYZ.png"/>
-    <img id="mapBtn" class="item--Tf7" src="./assets/-Hmb.png"/>
   </div>
-</div>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7e9a421bfbfa26979e0fa8ca19626377
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7e9a421bfbfa26979e0fa8ca19626377
 "></script>
-<script src="scripts/map.js"></script>
+  <script src="scripts/map.js"></script>
 </body>

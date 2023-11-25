@@ -77,7 +77,7 @@ app.listen(PORT, () => {
 });
 
 
-<<<<<<< HEAD
+
 
 
 
@@ -276,5 +276,3 @@ app.get('/steps/:userId', (req, res) => {
       res.status(404).send({ message: 'User not found' });
   }
 });
-=======
->>>>>>> 20db6af29bdc6ed1504ebad19116e8e0f3bc5781

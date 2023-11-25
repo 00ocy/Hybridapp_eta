@@ -161,3 +161,10 @@ body {
   z-index: 1; /* 지도를 다른 요소들 뒤로 보냅니다. */
 }
 
+body {
+  background-color: #ebd7ca;
+}
+
+.group-11-8Bb{
+  cursor:  grab;
+}
