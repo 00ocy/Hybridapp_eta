@@ -1,24 +1,3 @@
-function onSignIn(googleUser) {
-  // 기존 사용자 정보 코드
-  var profile = googleUser.getBasicProfile();
-  console.log("ID: " + profile.getId());
-  console.log("Name: " + profile.getName());
-  console.log("Image URL: " + profile.getImageUrl());
-  console.log("Email: " + profile.getEmail());
-
-  // ID 토큰을 얻는 코드 추가
-  var id_token = googleUser.getAuthResponse().id_token;
-  console.log("ID Token: " + id_token);
-  // TODO: 여기에서 서버로 ID 토큰을 전송하거나 처리할 수 있습니다.
-}
-
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log("User signed out.");
-  });
-}
-
 // "회원가입" 버튼에 클릭 이벤트 리스너 추가
 document
   .querySelector(".button-large-register-iNu")
@@ -75,6 +54,50 @@ document.getElementById("login-nJD").addEventListener("click", function () {
   window.location.href = "login.html";
 });
 
+
+
+// 구글 로그인
 document.getElementById("googleLogin").addEventListener("click", function () {
-  googleLogin();
+  // Google 로그인 초기화
+  gapi.load('auth2', function() {
+    // Google Auth 인스턴스 생성
+    var auth2 = gapi.auth2.init({
+      client_id: '510376110238-t3luckgljkbol5r017bsmgff84r4i5rk.apps.googleusercontent.com',
+      cookiepolicy: 'single_host_origin',
+    });
+
+    // Google 로그인 버튼에 이벤트 리스너 추가
+    auth2.attachClickHandler('googleLogin', {},
+      function(googleUser) {
+        // 로그인 성공 시 토큰을 서버로 전송
+        var id_token = googleUser.getAuthResponse().id_token;
+        sendTokenToServer(id_token);
+      }, function(error) {
+        alert(JSON.stringify(error, undefined, 2));
+      });
+  });
 });
+
+// 서버로 토큰 전송
+function sendTokenToServer(token) {
+  fetch('/google-login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ token: token })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === 'success') {
+      // 로그인 성공 처리
+      window.location.href = '/home'; // 예시: 홈페이지로 리디렉션
+    } else {
+      // 로그인 실패 처리
+      alert('로그인 실패: ' + data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}

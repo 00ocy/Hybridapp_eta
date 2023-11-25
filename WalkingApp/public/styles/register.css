@@ -333,3 +333,10 @@ div > input{
   height: 28px;
 }
 
+body {
+  background-color: #ebd7ca;
+}
+
+#googleLogin{
+  cursor: grab;
+}

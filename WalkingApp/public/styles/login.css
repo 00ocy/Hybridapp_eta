@@ -233,3 +233,7 @@ div > input{
   width: 200px;
   height: 28px;
 }
+
+body {
+  background-color: #ebd7ca;
+}

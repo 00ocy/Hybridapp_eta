@@ -1,4 +1,3 @@
-
 html {
 	font-size:62.5%;
 }
@@ -14,7 +13,8 @@ input {
 }
 body {
   width: 42.8rem;
-}.item--D9j {
+}
+.item--D9j {
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -24,7 +24,6 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../assets/image-1-bg.png');
   background-color: #ffffff;
   border-radius: 4rem;
 }
@@ -51,7 +50,7 @@ body {
 .item--D9j .auto-group-ut1h-vZw .auto-group-kqmm-3Pf .frame-1-wV3 {
   width: 100%;
   height: 100%;
-  display: flex;
+  display: flex;  
   align-items: center;
 }
 .item--D9j .auto-group-ut1h-vZw .auto-group-kqmm-3Pf .frame-1-wV3 .item--gSd {
@@ -169,16 +168,16 @@ body {
   font-family: Inter, 'Source Sans Pro';
   white-space: nowrap;
 }
-.item--D9j .auto-group-gfko-RcV {
+.item--D9j .searchedPeople {
   width: 100%;
   height: 35.1rem;
   position: relative;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 {
+.item--D9j .searchedPeople .item--yP7 {
   box-sizing: border-box;
   padding: 2.45rem 1.128rem 2.45rem 1.1rem;
-  width: 42.8rem;
+  width: 460px;
   height: 32.35rem;
   position: absolute;
   left: 0;
@@ -186,20 +185,20 @@ body {
   background-color: rgba(106, 102, 102, 0.200000003);
   border-radius: 1rem;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB {
+.item--D9j .searchedPeople .item--yP7 .item--tFB {
   width: 100%;
   height: 22.9872rem;
   align-items: flex-end;
   display: flex;
   flex-direction: column;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-1-oN9 {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-1-oN9 {
   margin: 0rem 0.004rem 1.113rem 0rem;
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-1-oN9 .ellipse-152-ik1 {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-1-oN9 .ellipse-152-ik1 {
   margin: 0rem 1.24rem 1.04rem 0rem;
   width: 4.1601rem;
   height: 4.1601rem;
@@ -212,14 +211,14 @@ body {
   border-radius: 2.0801rem;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-1-oN9 .text-KNR {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-1-oN9 .text-KNR {
   margin: 1.326rem 23.3rem 0rem 0rem;
   align-items: center;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-1-oN9 .text-KNR .text-eQh {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-1-oN9 .text-KNR .text-eQh {
   margin-bottom: 0.5738rem;
   font-size: 2.4rem;
   font-weight: 700;
@@ -229,7 +228,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-1-oN9 .text-KNR .item-54-32-yhs {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-1-oN9 .text-KNR .item-54-32-yhs {
   margin-left: 0.1rem;
   font-size: 1rem;
   font-weight: 700;
@@ -239,7 +238,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-1-oN9 .item--sYM {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-1-oN9 .item--sYM {
   margin: 0rem 0.654rem 0.293rem 0rem;
   width: 2.246rem;
   height: 1.7073rem;
@@ -247,7 +246,7 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-1-oN9 .icon-more-kMF {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-1-oN9 .icon-more-kMF {
   margin-bottom: 0.2763rem;
   width: 1.8683rem;
   height: 1.8683rem;
@@ -255,7 +254,7 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .line-2pZ {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .line-2pZ {
   margin-bottom: 1.4872rem;
   width: 40.572rem;
   height: 0.1rem;
@@ -263,13 +262,13 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-2-86u {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-2-86u {
   margin: 0rem 0.004rem 1.5rem 0rem;
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-2-86u .ellipse-152-e5F {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-2-86u .ellipse-152-e5F {
   margin: 0rem 1.24rem 1.04rem 0rem;
   width: 4.1601rem;
   height: 4.1601rem;
@@ -282,13 +281,13 @@ body {
   border-radius: 2.0801rem;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-2-86u .text-voT {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-2-86u .text-voT {
   margin: 1.326rem 21.8rem 0rem 0rem;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-2-86u .text-voT .text-4uf {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-2-86u .text-voT .text-4uf {
   margin-bottom: 0.5738rem;
   font-size: 2.4rem;
   font-weight: 700;
@@ -298,7 +297,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-2-86u .text-voT .item-54-32-cAV {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-2-86u .text-voT .item-54-32-cAV {
   margin-left: 0.3rem;
   font-size: 1rem;
   font-weight: 700;
@@ -308,7 +307,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-2-86u .item--Kqb {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-2-86u .item--Kqb {
   margin: 0rem 0.654rem 0.293rem 0rem;
   width: 2.246rem;
   height: 1.7073rem;
@@ -316,7 +315,7 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-2-86u .icon-more-qow {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-2-86u .icon-more-qow {
   margin-bottom: 0.2763rem;
   width: 1.8683rem;
   height: 1.8683rem;
@@ -324,7 +323,7 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .line-amX {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .line-amX {
   margin-bottom: 1.3rem;
   width: 40.572rem;
   height: 0.1rem;
@@ -332,13 +331,13 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-3-v4h {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-3-v4h {
   margin: 0rem 0.004rem 1.687rem 0rem;
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-3-v4h .ellipse-152-F6y {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-3-v4h .ellipse-152-F6y {
   margin: 0rem 1.24rem 1.04rem 0rem;
   width: 4.1601rem;
   height: 4.1601rem;
@@ -351,13 +350,13 @@ body {
   border-radius: 2.0801rem;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-3-v4h .text-wEh {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-3-v4h .text-wEh {
   margin: 1.326rem 21.8rem 0rem 0rem;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-3-v4h .text-wEh .text-5Lu {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-3-v4h .text-wEh .text-5Lu {
   margin-bottom: 0.5738rem;
   font-size: 2.4rem;
   font-weight: 700;
@@ -367,7 +366,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-3-v4h .text-wEh .item-54-32-crd {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-3-v4h .text-wEh .item-54-32-crd {
   margin-left: 0.3rem;
   font-size: 1rem;
   font-weight: 700;
@@ -377,7 +376,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-3-v4h .item--95s {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-3-v4h .item--95s {
   margin: 0rem 0.654rem 0.293rem 0rem;
   width: 2.246rem;
   height: 1.7073rem;
@@ -385,7 +384,7 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .item-3-v4h .icon-more-rW5 {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .item-3-v4h .icon-more-rW5 {
   margin-bottom: 0.2763rem;
   width: 1.8683rem;
   height: 1.8683rem;
@@ -393,14 +392,14 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .item--yP7 .item--tFB .line-bCm {
+.item--D9j .searchedPeople .item--yP7 .item--tFB .line-bCm {
   width: 40.572rem;
   height: 0.1rem;
   object-fit: contain;
   vertical-align: top;
   flex-shrink: 0;
 }
-.item--D9j .auto-group-gfko-RcV .navbar-Jcy {
+.item--D9j .searchedPeople .navbar-Jcy {
   width: 42.8rem;
   height: 9.2rem;
   position: absolute;
@@ -408,7 +407,7 @@ body {
   top: 25.9rem;
   box-shadow: 0 1rem 4rem rgba(29, 22, 23, 0.0700000003);
 }
-.item--D9j .auto-group-gfko-RcV .navbar-Jcy .item--dv9 {
+.item--D9j .searchedPeople .navbar-Jcy .item--dv9 {
   width: 42.8rem;
   height: 8rem;
   position: absolute;
@@ -417,7 +416,7 @@ body {
   object-fit: contain;
   vertical-align: top;
 }
-.item--D9j .auto-group-gfko-RcV .navbar-Jcy .item--97o {
+.item--D9j .searchedPeople .navbar-Jcy .item--97o {
   box-sizing: border-box;
   padding: 1.4rem 1.6rem 1.8rem 1.7rem;
   width: 6.8rem;
@@ -431,13 +430,13 @@ body {
   background-position: center;
   background-image: url('../assets/-tn5.png');
 }
-.item--D9j .auto-group-gfko-RcV .navbar-Jcy .item--97o .home-cn5 {
+.item--D9j .searchedPeople .navbar-Jcy .item--97o .home-cn5 {
   width: 3.5rem;
   height: 3.3rem;
   object-fit: contain;
   vertical-align: top;
 }
-.item--D9j .auto-group-gfko-RcV .navbar-Jcy .item--Li5 {
+.item--D9j .searchedPeople .navbar-Jcy .item--Li5 {
   opacity: 0.3;
   width: 4.2rem;
   height: 4.2rem;
@@ -448,7 +447,7 @@ body {
   object-fit: cover;
   vertical-align: top;
 }
-.item--D9j .auto-group-gfko-RcV .navbar-Jcy .item--2qo {
+.item--D9j .searchedPeople .navbar-Jcy .item--2qo {
   width: 4.3rem;
   height: 4.3rem;
   cursor: pointer;
@@ -457,4 +456,65 @@ body {
   top: 2.3rem;
   object-fit: cover;
   vertical-align: top;
+}
+
+.item--D9j {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  border-radius: 4rem;
+  position: relative;
+  z-index: 0; /* 지도가 다른 요소들보다 아래에 위치하도록 z-index 값을 낮춥니다. */
+}
+
+
+#map {
+  position: absolute;
+  top: 0; /* 원하는 위치에 맞게 조정 */
+  left: 0; /* 원하는 위치에 맞게 조정 */
+  height: 100%; /* 원하는 높이 */
+  width: 100%; /* 원하는 너비 */  
+  z-index: 2; /* 지도를 다른 요소들 뒤로 보냅니다. */
+}
+
+/* 다른 요소들에 더 높은 z-index 값 부여 */
+.auto-group-ut1h-vZw, .searchedPeople, .navbar-Jcy {
+  position: relative; /* 상대적 위치 지정 */
+  z-index: 3; /* 지도보다 높은 z-index 값을 지정합니다. */
+}
+
+
+
+body {
+  background-color: #ebd7ca;
+}
+
+/* Flexbox 컨테이너 설정을 조정합니다. */
+.frame-1-wV3 {
+  display: flex;
+  justify-content: space-between; /* 아이템을 양 끝에 배치 */
+  align-items: center; /* 아이템을 세로 중앙에 배치 */
+}
+
+/* 절대 위치를 사용하여 SearchStart 버튼을 조정합니다. */
+#SearchStart {
+  position: absolute;
+  right: 14%; /* 오른쪽에서 10px 떨어진 곳에 위치 */
+  top: 19%; /* 상단에서 10px 떨어진 곳에 위치 */
+  cursor: pointer;
+}
+
+/* 미디어 쿼리를 사용하여 모바일 화면에서의 스타일을 조정합니다. */
+@media screen and (max-width: 768px) {
+  #SearchStart {
+      right: 5px; /* 모바일 화면에서 오른쪽 여백을 줄입니다. */
+      top: 5px; /* 모바일 화면에서 상단 여백을 줄입니다. */
+  }
 }

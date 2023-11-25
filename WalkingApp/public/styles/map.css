@@ -1,4 +1,5 @@
 
+
 html {
 	font-size:62.5%;
 }
@@ -167,4 +168,12 @@ body {
 
 .group-11-8Bb{
   cursor:  grab;
+}
+
+#SearchStart{
+  cursor:  grab;
+}
+
+#rankingBtn{
+  opacity: 0.3;
 }
