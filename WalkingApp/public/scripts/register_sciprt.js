@@ -67,17 +67,18 @@ function handleCredentialResponse(response) {
 }
 
 window.onload = function () {
+  // Google 로그인 초기화
   google.accounts.id.initialize({
     client_id: '510376110238-t3luckgljkbol5r017bsmgff84r4i5rk.apps.googleusercontent.com',
-    callback: handleCredentialResponse
+    callback: handleCredentialResponse,
+    auto_select: true  // 자동 선택 활성화    
   });
 
-  google.accounts.id.renderButton(
-    document.getElementById('googleLogin'),
-    { theme: 'outline', size: 'large' }  // 버튼 스타일 설정
-  );
-
-  google.accounts.id.prompt(); // 사용자가 로그인하도록 유도
+  // 이미지에 클릭 이벤트 리스너 추가
+  document.getElementById('googleLogin').addEventListener('click', function() {
+    // Google 로그인 프롬프트를 표시
+    google.accounts.id.prompt();
+  });
 }
 
 // 서버로 토큰 전송

@@ -34,5 +34,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+/* -------------------------------------------------------------------------------------- */
+// 구글 로그인
+// Google 로그인 버튼 초기화 및 이벤트 핸들러 설정
+function handleCredentialResponse(response) {
+  // 서버로 ID 토큰 전송
+  sendTokenToServer(response.credential);
+}
 
+window.onload = function () {
+  // Google 로그인 초기화
+  google.accounts.id.initialize({
+    client_id: '510376110238-t3luckgljkbol5r017bsmgff84r4i5rk.apps.googleusercontent.com',
+    callback: handleCredentialResponse,
+    auto_select: true  // 자동 선택 활성화    
+  });
+
+  // 이미지에 클릭 이벤트 리스너 추가
+  document.getElementById('googleLogin').addEventListener('click', function() {
+    // Google 로그인 프롬프트를 표시
+    google.accounts.id.prompt();
+  });
+}
+
+// 서버로 토큰 전송
+function sendTokenToServer(token) {
+  fetch('/google-login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ token: token })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === 'success') {
+      // 로그인 성공 처리
+      window.location.href = '/home.html'; // 예시: 홈페이지로 리디렉션
+    } else {
+      // 로그인 실패 처리
+      alert('로그인 실패: ' + data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
 

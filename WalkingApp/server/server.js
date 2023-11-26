@@ -259,30 +259,30 @@ app.listen(PORT, () => {
 
 
 
-//home 화면 만보기 만들기
-// 사용자의 걸음 수 데이터를 저장하는 객체
-let userSteps = {};
+// //home 화면 만보기 만들기
+// // 사용자의 걸음 수 데이터를 저장하는 객체
+// let userSteps = {};
 
-// 걸음 수 데이터를 저장하는 라우트
-app.post('/steps', (req, res) => {
-  const { userId, steps } = req.body;
+// // 걸음 수 데이터를 저장하는 라우트
+// app.post('/steps', (req, res) => {
+//   const { userId, steps } = req.body;
 
-  // 사용자 ID를 기반으로 데이터 저장
-  if(userId && steps) {
-      userSteps[userId] = (userSteps[userId] || 0) + steps;
-      res.status(200).send({ message: 'Steps updated successfully' });
-  } else {
-      res.status(400).send({ message: 'Invalid data' });
-  }
-});
+//   // 사용자 ID를 기반으로 데이터 저장
+//   if(userId && steps) {
+//       userSteps[userId] = (userSteps[userId] || 0) + steps;
+//       res.status(200).send({ message: 'Steps updated successfully' });
+//   } else {
+//       res.status(400).send({ message: 'Invalid data' });
+//   }
+// });
 
-// 특정 사용자의 걸음 수 데이터를 조회하는 라우트
-app.get('/steps/:userId', (req, res) => {
-  const userId = req.params.userId;
+// // 특정 사용자의 걸음 수 데이터를 조회하는 라우트
+// app.get('/steps/:userId', (req, res) => {
+//   const userId = req.params.userId;
 
-  if(userSteps[userId] !== undefined) {
-      res.status(200).send({ userId: userId, steps: userSteps[userId] });
-  } else {
-      res.status(404).send({ message: 'User not found' });
-  }
-});
+//   if(userSteps[userId] !== undefined) {
+//       res.status(200).send({ userId: userId, steps: userSteps[userId] });
+//   } else {
+//       res.status(404).send({ message: 'User not found' });
+//   }
+// });
