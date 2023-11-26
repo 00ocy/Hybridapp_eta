@@ -26,6 +26,7 @@ body {
   background-color: #ffffff;
   border-radius: 4rem;
 }
+
 .item--C9X .navbar-6Vo {
   margin-bottom: 2.7rem;
   width: 43.2rem;
@@ -159,6 +160,7 @@ body {
   font-family: Inter, 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
+  background-color: #efefef;
 }
 .item--C9X .friend {
   margin: 0rem 2.4rem 3.003rem 2.7rem;
