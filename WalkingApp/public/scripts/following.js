@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'home.html';
       });
 
+      document.getElementById('searchBTN').addEventListener('click', search);
     // 서버에서 친구 목록 가져오기
     fetch('/friendlistfollowing')
     
@@ -95,6 +96,45 @@ document.addEventListener('DOMContentLoaded', function() {
             });
       });
     }
+    
+    function search() {
+        // 입력 상자에서 검색어 가져오기
+        const searchTerm = document.getElementById('searchInput').value;
+      
+        // 서버에 POST 요청 보내기
+        fetch('/search/following', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            searchTerm: searchTerm,
+          }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          // 결과를 표시할 엘리먼트 가져오기
+          const friendlistElement = document.getElementById('friendlist');
+          
+          // friendlist의 내용을 지우기
+          friendlistElement.innerHTML = '';
+      
+          // 결과를 화면에 출력
+          if (data.results.length > 0) {
+            data.results.forEach(result => {
+              addFriend(result.Name, result.Name2); // addFriend 함수로 결과를 friendlist에 추가
+            });
+          } else {
+            // 검색 결과가 없는 경우 처리
+            friendlistElement.textContent = '';
+          }
+        })
+        .catch(error => {
+          console.error('Error searching:', error);
+          // 에러 처리 로직 추가
+        });
+      }
+      
     
   });
   

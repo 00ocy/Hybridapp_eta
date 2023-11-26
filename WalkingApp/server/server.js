@@ -228,180 +228,32 @@ app.get('/followercount', (req, res) => {
 });
 /* -------------------------------------------------------------------------------------------- */
 
+// 팔로워 검색 라우트
+app.post('/search/:relation', (req, res) => {
+  const searchTerm = req.body.searchTerm;
+  const relation = req.params.relation; // follower 또는 following
+
+  // SQLite3 데이터베이스에서 검색 수행
+  const query = `SELECT Name, Name2 FROM friend WHERE (Name LIKE '%${searchTerm}%' OR Name2 LIKE '%${searchTerm}%') AND ${relation} = 1 ORDER BY Name, Name2`;
+
+  // 이후 실행 로직은 동일
+  db2.all(query, [], (err, rows) => {
+    if (err) {
+      console.error('Error executing search query:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      res.json({ results: rows });
+    }
+  });
+});
+
+/* -------------------------------------------------------------------------------------------- */
+
 // 서버 시작 및 포트 설정
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
