@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>팔로잉</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600%2C700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A400%2C600%2C700"/>
+  <link rel="stylesheet" href="./styles/following.css"/>
+</head>
+<body>
+
+<button onclick="addNewFriend()">새로운 친구 추가</button>
+<div class="item--C9X">
+
+<div id ="friendlist">
+
+</div>
+
+</div>
+<script>
+    // 새로운 친구를 추가하는 함수
+    function addFriend(name, username, status, imageSrc) {
+        // 새로운 친구 요소 생성
+        var newFriend = document.createElement("div");
+        newFriend.className = "friend";
+
+        // 새로운 친구의 내용 설정
+        newFriend.innerHTML = `
+            <div class="item--jPf"></div>
+            <div class="auto-group-ukj3-G8h">
+                <div class="auto-group-mdvu-z4h">
+                    <p class="item--LPT">${name}</p>
+                    <p class="item--rsb">${username}</p>
+                </div>
+                <div class="auto-group-jmgx-P6q">${status}</div>
+                <img class="item--Sqo" src="${imageSrc}"/>
+            </div>
+        `;
+
+        // friendlist에 새로운 친구 추가
+        document.getElementById("friendlist").appendChild(newFriend);
+    }
+
+    // 새로운 친구를 추가하는 함수
+    function addNewFriend() {
+        var name = prompt("친구의 이름을 입력하세요:");
+        var username = prompt("친구의 사용자명을 입력하세요:");
+        var status = prompt("친구의 상태를 입력하세요 (온라인 또는 오프라인):");
+        var imageSrc = prompt("친구의 이미지 경로를 입력하세요:");
+
+        // 사용자가 정보를 모두 입력했을 때만 친구 추가
+        if (name && username && status && imageSrc) {
+            addFriend(name, username, status, imageSrc);
+        } else {
+            alert("모든 정보를 입력해야 합니다.");
+        }
+    }
+
+    // 예제로 친구 추가
+    // 
+    addFriend("친구1", "friend1", "온라인", "./assets/friend1.png");
+    </script>
+
+</body>
+</html>

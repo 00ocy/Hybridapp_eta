@@ -3,6 +3,7 @@
 const express = require('express');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
+const sqlite3_friend = require('sqlite3').verbose();
 const app = express();
 const bodyParser = require('body-parser'); //걸음수 확인
 
@@ -19,7 +20,13 @@ const db = new sqlite3.Database('userDatabase.db', (err) => {
   if (err) {
     console.error(err.message);
   }
-  console.log('Connected to the SQLite database.');
+  console.log('Connected to the SQLite userdatabase.');
+});
+const db2 = new sqlite3.Database('friendDatabase.db', (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('Connected to the SQLite frienddatabase.');
 });
 
 /* -------------------------------------------------------------------------------------------- */
@@ -120,6 +127,105 @@ app.post('/google-login', async (req, res) => {
   }
 });
 
+/* -------------------------------------------------------------------------------------------- */
+
+// 데이터베이스 팔로잉에서 친구목록 받아오기
+app.get('/friendlistfollowing', (req, res) => {
+  // 데이터베이스에서 팔로잉이 true인 친구 검색
+  db2.all('SELECT Name, Name2 FROM friend WHERE following = 1 ORDER BY Name', [], (err, rows) => {
+    if (err) {
+      console.error('Error querying database:', err);
+      res.status(500).send('Internal Server Error');
+      return;
+    }
+
+    // 결과를 클라이언트에 응답
+    res.json(rows);
+  });
+});
+
+// 데이터베이스 팔로워에서 친구목록 받아오기
+app.get('/friendlistfollower', (req, res) => {
+  // 데이터베이스에서 팔로잉이 true인 친구 검색
+  db2.all('SELECT Name, Name2 FROM friend WHERE follower = 1 ORDER BY Name', [], (err, rows) => {
+    if (err) {
+      console.error('Error querying database:', err);
+      res.status(500).send('Internal Server Error');
+      return;
+    }
+
+    // 결과를 클라이언트에 응답
+    res.json(rows);
+  });
+});
+
+/* -------------------------------------------------------------------------------------------- */
+
+// 언팔로잉 / 팔로잉
+app.put(`/friendupdatefollowing/:username`, (req, res) => {
+  const friendNameToUpdate = req.params.username;
+
+  // SQLite3 데이터베이스에서 해당 친구의 Following 값을 false로 업데이트
+  db2.run('UPDATE friend SET Following = 1 - Following WHERE Name2 = ?', [friendNameToUpdate], function (err) {
+    if (err) {
+        console.error('Error updating friend in database:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+        console.log('Friend updated in database successfully');
+        // 클라이언트에게 성공 응답 전송
+        res.json({ success: true });
+    }
+});
+});
+
+// 추가 / 삭제
+app.put(`/friendupdatefollower/:username`, (req, res) => {
+  const friendNameToUpdate = req.params.username;
+
+  // SQLite3 데이터베이스에서 해당 친구의 Following 값을 false로 업데이트
+  db2.run('UPDATE friend SET Follower = 1 - Follower WHERE Name2 = ?', [friendNameToUpdate], function (err) {
+    if (err) {
+        console.error('Error updating friend in database:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+        console.log('Friend updated in database successfully');
+        // 클라이언트에게 성공 응답 전송
+        res.json({ success: true });
+    }
+});
+});
+
+/* -------------------------------------------------------------------------------------------- */
+
+// 팔로잉 하는 사람 수 가져오기
+app.get('/followingcount', (req, res) => {
+  // friend 데이터베이스에서 following이 1인 행의 개수를 세는 쿼리
+  const query = 'SELECT COUNT(*) as followingCount FROM friend WHERE following = 1';
+
+  // 쿼리 실행
+  db2.get(query, (err, row) => {
+    if (err) {
+      console.error('Error counting following:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      // 클라이언트에게 수를 반환
+      res.json({ followingCount: row.followingCount });
+    }
+  });
+});
+
+// 팔로워 사람 수 가져오기
+app.get('/followercount', (req, res) => {
+  const query = 'SELECT COUNT(*) as count FROM friend WHERE follower = 1';
+  db2.get(query, (err, row) => {
+    if (err) {
+      console.error('Error counting followers:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      res.json({ count: row.count });
+    }
+  });
+});
 /* -------------------------------------------------------------------------------------------- */
 
 // 서버 시작 및 포트 설정
