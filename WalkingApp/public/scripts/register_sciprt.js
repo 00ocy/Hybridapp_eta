@@ -41,7 +41,7 @@ document
           alert(data.message);
         }
       })
-      .catch((error) => {
+      .catch((error) => { 
         // 네트워크 오류 등의 이유로 요청 실패 시 처리
         console.error("Error:", error);
         alert("회원가입 중 오류가 발생했습니다.");

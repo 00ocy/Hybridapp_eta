@@ -3,9 +3,9 @@
 const express = require('express');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
-const sqlite3_friend = require('sqlite3').verbose();
+//const sqlite3_friend = require('sqlite3').verbose();
 const app = express();
-const bodyParser = require('body-parser'); //걸음수 확인
+//const bodyParser = require('body-parser'); //걸음수 확인
 
 /* -------------------------------------------------------------------------------------------- */
 
@@ -13,8 +13,20 @@ const bodyParser = require('body-parser'); //걸음수 확인
 app.use(express.static(path.join(__dirname, '..', 'public')));
 // JSON 형태의 요청을 처리할 수 있도록 설정
 app.use(express.json());
-/* -------------------------------------------------------------------------------------------- */
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
+const session = require('express-session');
+/* -------------------------------------------------------------------------------------------- */
+// 세션 설정
+app.use(session({
+  secret: 'your-secret-key', // 세션을 암호화할 때 사용되는 비밀 키
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }, // HTTPS가 아닌 환경에서도 쿠키를 사용하려면 false로 설정
+}));
 // SQLite 데이터베이스 연결
 const db = new sqlite3.Database('userDatabase.db', (err) => {
   if (err) {
@@ -40,6 +52,17 @@ const client = new OAuth2Client(CLIENT_ID);
 
 /* -------------------------------------------------------------------------------------------- */
 
+// 미들웨어: 클라이언트에서 세션을 확인하는 요청에 대한 처리
+app.get('/check-session', (req, res) => {
+  if (req.session.user) {
+    // 세션이 존재하면 로그인 상태임을 전달
+    res.json({ isLoggedIn: true });
+  } else {
+    // 세션이 없으면 비로그인 상태임을 전달
+    res.json({ isLoggedIn: false });
+  }
+});
+/* -------------------------------------------------------------------------------------------- */
 // 회원가입 처리
 app.post('/signup', (req, res) => {
   const { lastName, firstName, email, password } = req.body;
@@ -55,10 +78,11 @@ app.post('/signup', (req, res) => {
       res.json({ status: 'error', message: '이미 존재하는 이메일입니다.' });
     } else {
       // 일반 회원가입
-      db.run("INSERT INTO users (lastName, firstName, email, password, loginType) VALUES (?, ?, ?, ?, 'email')", [lastName, firstName, email, password], function(err) {
-        if (err) {
+     db.run("INSERT INTO users (lastName, firstName, email, password, loginType) VALUES (?, ?, ?, ?, 'email')", [lastName, firstName, email, password], function(err) {
+      if (err) {
           res.json({ status: 'error', message: err.message });
         } else {
+          req.session.user = { email, name: `${req.body.email} ${req.body.lastName}`}; 
           res.json({ status: 'success', message: '회원가입 성공!', redirectUrl: '/register_welcome.html' });
         }
       });
@@ -80,6 +104,7 @@ app.post('/login', (req, res) => {
       res.json({ status: 'error', message: '로그인 중 오류가 발생했습니다.' });
     } else if (row && row.password === password) {
       // 로그인 성공 응답
+      req.session.user = { email, name: `${req.body.email} ${req.body.lastName}`}; 
       res.json({ status: 'success', message: '로그인 성공!' });
     } else {
       // 로그인 실패 응답
@@ -87,6 +112,24 @@ app.post('/login', (req, res) => {
     }
   });
 });
+// 로그아웃 처리-------------------------------------------------------------------------
+app.post('/logout', (req, res) => {
+  // 세션 삭제
+  req.session.destroy();
+  
+  res.json({ status: 'success', message: '로그아웃 성공!' });
+});
+
+// ---------------------------------------------------------------------------------------------
+// 미들웨어: 페이지 접근 권한 확인
+function requireLogin(req, res, next) {
+  // 세션에 사용자 정보가 있는지 확인
+  if (req.session.user) {
+    next(); // 다음 미들웨어로 이동
+  } else {
+    res.status(401).json({ status: 'error', message: '로그인이 필요합니다.' });
+  }
+}
 
 /* -------------------------------------------------------------------------------------------- */
 
