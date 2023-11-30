@@ -50,10 +50,37 @@ document.getElementById('mapBtn').addEventListener('click', function () {
   window.location.href = 'map.html';
 });
 document.getElementById('follower').addEventListener('click', function () {
-
-window.location.href = 'follower.html';
+  window.location.href = 'follower.html';
 });
 
+/*
+document.getElementById('logoutBtn').addEventListener('click', function () {
+  fetch('/logout', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    // 필요한 경우에 대비해 본문에 데이터를 추가할 수 있습니다.
+    // body: JSON.stringify({ key: 'value' })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === 'success') {
+      // 로그아웃 성공 시 필요한 동작을 수행합니다.
+      alert('로그아웃 성공!');
+      location.reload();
+    } else {
+      // 로그아웃 실패 시 에러 메시지를 표시합니다.
+      alert('로그아웃 실패: ' + data.message);
+    }
+  })
+  .catch(error => {
+    // 네트워크 오류 등의 이유로 요청 실패 시 처리
+    console.error('Error:', error);
+    alert('로그아웃 중 오류가 발생했습니다.');
+  });
+});
+*/
 function updateGauge(steps, maxSteps) {
   const gaugeFill = document.querySelector('.gauge__fill');
   const fillPercentage = steps / maxSteps;

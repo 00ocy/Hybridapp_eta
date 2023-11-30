@@ -32,7 +32,7 @@ const db = new sqlite3.Database('userDatabase.db', (err) => {
   if (err) {
     console.error(err.message);
   }
-  console.log('Connected to the SQLite userdatabase.');
+  console.log('Connected to the SQLite userdatabase.'); 
 });
 const db2 = new sqlite3.Database('friendDatabase.db', (err) => {
   if (err) {
