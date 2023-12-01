@@ -67,28 +67,35 @@ app.get('/check-session', (req, res) => {
 app.post('/signup', (req, res) => {
   const { lastName, firstName, email, password } = req.body;
 
+  // 이메일 유효성 검사를 위한 정규 표현식
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    res.status(400).json({ status: 'error', message: '유효하지 않은 이메일 주소입니다. status: 400' });
+    return;
+  }
+
   // 중복 이메일 검사
   db.get("SELECT * FROM users WHERE email = ?", [email], (err, row) => {
     if (err) {
-      res.json({ status: 'error', message: err.message });
+      res.status(500).json({ status: 'error', message: `서버 오류가 발생했습니다. status: 500, error: ${err.message}` });
       return;
     }
-    
+
     if (row) {
-      res.json({ status: 'error', message: '이미 존재하는 이메일입니다.' });
+      res.status(409).json({ status: 'error', message: '이미 존재하는 이메일입니다. status: 409' });
     } else {
-      // 일반 회원가입
-     db.run("INSERT INTO users (lastName, firstName, email, password, loginType) VALUES (?, ?, ?, ?, 'email')", [lastName, firstName, email, password], function(err) {
-      if (err) {
-          res.json({ status: 'error', message: err.message });
+      db.run("INSERT INTO users (lastName, firstName, email, password, loginType) VALUES (?, ?, ?, ?, 'email')", [lastName, firstName, email, password], function(err) {
+        if (err) {
+          res.status(500).json({ status: 'error', message: `회원가입 중 오류가 발생했습니다. status: 500, error: ${err.message}` });
         } else {
-          req.session.user = { email, name: `${req.body.email} ${req.body.lastName}`}; 
-          res.json({ status: 'success', message: '회원가입 성공!', redirectUrl: '/register_welcome.html' });
+          req.session.user = { email, name: `${firstName} ${lastName}` }; 
+          res.status(200).json({ status: 'success', message: '회원가입 성공! status: 200', redirectUrl: '/register_welcome.html' });
         }
       });
     }
   });
 });
+
 
 /* -------------------------------------------------------------------------------------------- */
 
@@ -101,23 +108,29 @@ app.post('/login', (req, res) => {
   db.get("SELECT * FROM users WHERE email = ?", [email], (err, row) => {
     if (err) {
       // 데이터베이스 오류 처리
-      res.json({ status: 'error', message: '로그인 중 오류가 발생했습니다.' });
+      res.status(500).json({ status: 'error', message: '로그인 중 오류가 발생했습니다.' });
     } else if (row && row.password === password) {
       // 로그인 성공 응답
       req.session.user = { email, name: `${req.body.email} ${req.body.lastName}`}; 
-      res.json({ status: 'success', message: '로그인 성공!' });
+      res.status(200).json({ status: 'success', message: '로그인 성공! status: 200' });
     } else {
       // 로그인 실패 응답
-      res.json({ status: 'error', message: '이메일 또는 비밀번호가 올바르지 않습니다.' });
+      res.status(401).json({ status: 'error', message: '이메일 또는 비밀번호가 올바르지 않습니다. status: 401' });
     }
   });
 });
 // 로그아웃 처리-------------------------------------------------------------------------
 app.post('/logout', (req, res) => {
   // 세션 삭제
-  req.session.destroy();
-  
-  res.json({ status: 'success', message: '로그아웃 성공!' });
+  req.session.destroy(err => {
+    if (err) {
+      // 세션 삭제 실패 처리 (500 Internal Server Error)
+      res.status(500).json({ status: 'error', message: '로그아웃 중 오류가 발생했습니다. status: 500' });
+    } else {
+      // 로그아웃 성공 응답 (200 OK)
+      res.status(200).json({ status: 'success', message: '로그아웃 성공! status: 200' });
+    }
+  });
 });
 
 // ---------------------------------------------------------------------------------------------
@@ -127,7 +140,7 @@ function requireLogin(req, res, next) {
   if (req.session.user) {
     next(); // 다음 미들웨어로 이동
   } else {
-    res.status(401).json({ status: 'error', message: '로그인이 필요합니다.' });
+    res.status(401).json({ status: 'error', message: '로그인이 필요합니다. status: 401' });
   }
 }
 
@@ -149,24 +162,27 @@ app.post('/google-login', async (req, res) => {
     // 데이터베이스에서 사용자 검색
     db.get("SELECT * FROM users WHERE googleId = ?", [googleId], (err, row) => {
       if (err) {
-        res.json({ status: 'error', message: '데이터베이스 오류' });
+        // 데이터베이스 오류 처리 (500 Internal Server Error)
+        res.status(500).json({ status: 'error', message: '데이터베이스 오류. status: 500' });
       } else if (row) {
-        // 사용자가 이미 존재하는 경우
-        res.json({ status: 'success', message: '로그인 성공!', user: row });
+        // 사용자가 이미 존재하는 경우 (200 OK)
+        res.status(200).json({ status: 'success', message: '로그인 성공! status: 200', user: row });
       } else {
         // 새 사용자 추가
         db.run("INSERT INTO users (email, name, googleId, loginType) VALUES (?, ?, ?, 'google')", [email, name, googleId], function(err) {
           if (err) {
-            res.json({ status: 'error', message: '데이터베이스 저장 오류' });
+            // 데이터베이스 삽입 오류 (500 Internal Server Error)
+            res.status(500).json({ status: 'error', message: '데이터베이스 저장 오류. status: 500' });
           } else {
-            // 새 사용자 추가 성공
-            res.json({ status: 'success', message: '새 사용자 등록 및 로그인 성공!' });
+            // 새 사용자 추가 성공 (201 Created)
+            res.status(201).json({ status: 'success', message: '새 사용자 등록 및 로그인 성공! status: 201' });
           }
         });
       }
     });
   } catch (error) {
-    res.json({ status: 'error', message: '로그인 중 오류가 발생했습니다.' });
+    // 기타 오류 처리 (500 Internal Server Error)
+    res.status(500).json({ status: 'error', message: '로그인 중 오류가 발생했습니다. status: 500' });
   }
 });
 

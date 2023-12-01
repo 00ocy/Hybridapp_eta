@@ -70,6 +70,7 @@ function sendTokenToServer(token) {
   .then(data => {
     if (data.status === 'success') {
       // 로그인 성공 처리
+      alert('로그인 성공: ' + data.message);
       window.location.href = '/home.html'; // 예시: 홈페이지로 리디렉션
     } else {
       // 로그인 실패 처리
