@@ -22,7 +22,11 @@ input {
 body {
   width: 42.8rem;
 }
-
+#logoutBtn
+{
+  margin-right: 10px;
+  cursor: grab;
+}
 .item--mbw {
   box-sizing: border-box;
   padding: 6.4rem 0rem 0rem 0.2rem;
@@ -46,7 +50,7 @@ body {
 }
 
 .item--mbw .auto-group-zevw-56q .item--b5B {
-  margin: 0.2rem 27rem 0rem 0rem;
+  margin: 0.2rem 19rem 0rem 0rem;
   font-size: 2rem;
   font-weight: 700;
   line-height: 0.9;
@@ -67,6 +71,7 @@ body {
 }
 
 .item--mbw .auto-group-zevw-56q .group-10301-vFs {
+  
   width: 4.9rem;
   height: 2.2rem;
   position: relative;

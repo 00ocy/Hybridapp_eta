@@ -53,7 +53,7 @@ document.getElementById('follower').addEventListener('click', function () {
   window.location.href = 'follower.html';
 });
 
-/*
+
 document.getElementById('logoutBtn').addEventListener('click', function () {
   fetch('/logout', {
     method: 'POST',
@@ -80,7 +80,7 @@ document.getElementById('logoutBtn').addEventListener('click', function () {
     alert('로그아웃 중 오류가 발생했습니다.');
   });
 });
-*/
+
 function updateGauge(steps, maxSteps) {
   const gaugeFill = document.querySelector('.gauge__fill');
   const fillPercentage = steps / maxSteps;

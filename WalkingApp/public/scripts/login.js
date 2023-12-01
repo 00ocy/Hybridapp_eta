@@ -1,5 +1,24 @@
 // HTML 문서가 로드될 때 실행
 document.addEventListener('DOMContentLoaded', function() {
+  // 서버로 세션 확인 요청 보내기
+  fetch('/check-session')
+  .then(response => response.json())
+  .then(data => {
+    // 서버 응답으로부터 로그인 상태 확인
+    const isLoggedIn = data.isLoggedIn;
+
+    if (isLoggedIn) {
+      // 세션이 있으면 로그인 상태
+      console.log('로그인 상태입니다.');
+      window.location.href = '/home.html';
+    } else {
+      // 세션이 없으면 비로그인 상태
+      console.log('비로그인 상태입니다.');
+    }
+  })
+  .catch(error => {
+    console.error('세션 확인 중 오류:', error);
+  });
   // "로그인" 버튼 클릭 시 실행
   document.querySelector('.button-large-register-46M').addEventListener('click', function(event) {
     // 기본 동작 중단 (페이지 새로고침 등)

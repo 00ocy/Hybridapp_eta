@@ -60,6 +60,24 @@ function handleCredentialResponse(response) {
 }
 
 window.onload = function () {
+  fetch('/check-session')
+  .then(response => response.json())
+  .then(data => {
+    // 서버 응답으로부터 로그인 상태 확인
+    const isLoggedIn = data.isLoggedIn;
+
+    if (isLoggedIn) {
+      // 세션이 있으면 로그인 상태
+      console.log('로그인 상태입니다.');
+      window.location.href = '/home.html';
+    } else {
+      // 세션이 없으면 비로그인 상태
+      console.log('비로그인 상태입니다.');
+    }
+  })
+  .catch(error => {
+    console.error('세션 확인 중 오류:', error);
+  });
   // Google 로그인 초기화
   google.accounts.id.initialize({
     client_id:
